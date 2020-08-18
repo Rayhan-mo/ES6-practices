@@ -99,8 +99,60 @@ const salary = 450;
 const money = [650, 550, 450];
 const maximum = Math.max(...money)
 console.log(maximum);
-//class constructor create object from class
+// class constructor create object from class
+class student{
+    constructor(sId, sName){
+        this.id = sId;
+        this.name = sName;
+        this.school = 'adarsha school' //default parameter
+    }
+}
+
+const student1 = new student(12000, 'shuvo'); // create new object
+const student2 = new student(14000, 'mahi');
+const student3 = new student(15000, 'mohammed')
+
+console.log(student1, student2, student3);
+// inheritance extends class super class method
+class Parent{
+    constructor(){
+        this.fatherName = 'kimo paul';
+    }
+}
+class Child extends Parent{
+    constructor(name){
+        super();
+        this.name = name;
+    }
+    getFullName(){
+        return this.name +" "+ this.fatherName;
+    }
+}
+const baby = new Child('paulo jorina');
+const baby2 = new Child('tommy chill')
+console.log(baby.getFullName());
+console.log(baby2.getFullName());
+// destructive object array destructive complex object
+const person = {name: 'Jack William', age:22, job:'facebooker', gfName:'Ema Watson', address:'Bonshal Kocu', phone:2458887880, friedns:['Tom', 'Rocky', "Isabella", 'Marcelo']};
 
 
+const {gfName, phone, salary, address, friedns} = person;
+// const gfName = person.gfName;
+// const phoneNum = person.phone;
 
 
+console.log(gfName, phone, salary, address, friedns[0]);
+// array destructure
+const friends = ['sakib', 'aliar', 'dundar', 'turgut', 'bamse'];
+const [first, second, ...next] = friends;
+console.log(next);
+// complex object
+const complexObject = {
+    name: 'artuk bey',
+    info: {
+        address: 'turkey',
+        age: 42
+    }
+}
+const {address} = complexObject.info;
+console.log(address);
